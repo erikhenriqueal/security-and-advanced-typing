@@ -1,0 +1,8 @@
+{
+  "name": "security-and-advanced-typing-shared",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "zod": "^4.3.6"
+  }
+}
