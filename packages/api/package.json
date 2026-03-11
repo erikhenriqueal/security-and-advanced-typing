@@ -3,7 +3,7 @@
   "license": "ISC",
   "type": "module",
   "scripts": {
-    "dev": "npx tsx watch ./src/server.ts",
+    "dev": "tsx watch --clearScreen=false ./src/server.ts",
     "build": "tsc",
     "start": "node ./dist/server.js"
   },
