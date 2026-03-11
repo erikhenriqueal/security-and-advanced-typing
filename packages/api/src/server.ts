@@ -1,9 +1,27 @@
+import "dotenv/config";
 import Fastify from "fastify";
+import { LoggerOptions } from "pino";
 
-const fastify = Fastify({ logger: true });
+const envToLogger: Record<string, boolean | LoggerOptions> = {
+  development: {
+    transport: {
+      target: "pino-pretty",
+      options: {
+        translateTime: "HH:MM:ss",
+        ignore: "pid,hostname",
+      },
+    },
+  },
+  production: true,
+  test: false,
+};
+
+const fastify = Fastify({
+  logger: envToLogger[process.env.NODE_ENV ?? "production"],
+});
 
 fastify.get("/", async (req, reply) => {
-  return { hello: "world" };
+  return { hello: "world!" };
 });
 
 async function start() {
