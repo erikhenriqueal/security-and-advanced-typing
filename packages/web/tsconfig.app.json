@@ -23,7 +23,11 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    "paths": {
+      "@/shadcn/*": ["./packages/shared/src/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "packages"]
 }
