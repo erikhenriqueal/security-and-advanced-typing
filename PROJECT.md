@@ -35,7 +35,11 @@
 
 ```bash
 $ git checkout -b feat/lab # Creates and moves to feat/lab branch.
-# If there's actually the branch you want to select, you need to use "git checkout <branch>" or (actually) "git switch <branch>" to select the branch you want. Then, you'll need to pull the actual code (usualy from origin "origin" and branch "main" or "master") using the command "git pull <origin> <branch>".
+# If there's actually the branch you want to select, you need to use "git
+# checkout <branch>" or (actually) "git switch <branch>" to select the
+# branch you want. Then, you'll need to pull the actual code (usualy from
+# origin "origin" and branch "main" or "master") using the command "git
+# pull <origin> <branch>".
 
 # Coding process (create features, update files, anything needed).
 
@@ -44,20 +48,26 @@ $ git status # Makes sure your actual working tree is as you expect.
 $ git add <files or *> # Adds target files on the working tree.
 $ git commit -m "example commit message"
 
-# If needed, continue coding until a new commit is required (like for new features/fixes/chores).
+# If needed, continue coding until a new commit is required (like for new
+# features/fixes/chores).
 # Repeats the "git add" and "git commit" commands as needed.
 
 $ git status # Makes sure you haven't forget to stage/commit any file (again).
 
 $ git branch # It's recommended to verify in which branch you are.
 
-# If you're in the wrong branch you must use "git branch --list" to see the branches list and then select the right one by running "git switch <branch>".
+# If you're in the wrong branch you must use "git branch --list" to see the
+# branches list and then select the right one by running "git switch <branch>".
 
 $ git push # Pushes the commited changes to the actual branch.
 # If you need to specify, you can use "git push <origin> <branch/flag>.
 
-# Then, only when you've finished the process of developing everything on the development branch and it's all lookig good and working properly, you can now proceed to the next step, that's one of the simplest ones.
+# Then, only when you've finished the process of developing everything on the
+# development branch and it's all lookig good and working properly, you can now
+# proceed to the next step, that's one of the simplest ones.
 
 $ git switch [main/master] # Switches to your project's main branch
-$ git merge feat/lab # Merges the actual (feat/lab) branch within main branch with all its changes
+$ git merge feat/lab # Merges the actual (feat/lab) branch within main branch
+# with all its changes
+$ git push # Pushes the merged changes to the main branch.
 ```
