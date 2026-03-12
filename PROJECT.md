@@ -2,9 +2,13 @@
 
 ## Stack
 
-- `TypeScript`
-- `Zod`
-- `JWT`
+- `Node.js`/`TypeScript`
+- `Vite` + `React` | Front-end
+- - `TailwindCSS` + `Shadcn/ui` | Faster UI Development
+- `Fastify` | Back-end
+- - `Zod` | Client and Server Sides Typing
+- - `JWT` + `Bcrypt` | Security and Hashing
+- `PostgreSQL` + `Prisma ORM` | Database
 
 ## Description
 
@@ -17,3 +21,14 @@
 ## What did I learn?
 
 > This project is one of my **Personal Lab's** projects, dedicated to simple/small projects that I created to learn some specific feature.
+
+### Setting Up the Stack
+
+### Working with GitHub Branches Management (such an even more simplified version of GitHub Flow)
+
+**Branches:**
+
+- `main`
+- `feat/lab`
+
+### Versioning
