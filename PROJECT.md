@@ -34,7 +34,8 @@
 **Workflow:**
 
 ```bash
-$ git checkout -b feat/lab # Creates feat/lab branch.
+$ git checkout -b feat/lab # Creates and moves to feat/lab branch.
+# If there's actually the branch you want to select, you need to use "git checkout <branch>" or (actually) "git switch <branch>" to select the branch you want. Then, you'll need to pull the actual code (usualy from origin "origin" and branch "main" or "master") using the command "git pull <origin> <branch>".
 
 # Coding process (create features, update files, anything needed).
 
