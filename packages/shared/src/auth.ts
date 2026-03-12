@@ -15,11 +15,11 @@ export const passwordSchema = z
     "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (!, @, #, $, %, &, *)",
   );
 
-export const loginSchema = z.object({
+export const authSchema = z.object({
   roleName: roleSchema,
   name: nameSchema,
   email: emailSchema,
   password: passwordSchema,
 });
 
-export type LoginInput = z.infer<typeof loginSchema>;
+export type AuthInput = z.infer<typeof authSchema>;
