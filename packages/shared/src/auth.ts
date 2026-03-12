@@ -15,11 +15,16 @@ export const passwordSchema = z
     "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (!, @, #, $, %, &, *)",
   );
 
-export const loginSchema = z.object({
-  roleName: roleSchema,
+export const registerSchema = z.object({
   name: nameSchema,
   email: emailSchema,
   password: passwordSchema,
 });
 
-export type LoginInput = z.infer<typeof loginSchema>;
+export const loginSchema = z.object({
+  email: emailSchema,
+  password: passwordSchema,
+});
+
+export type RegisterForm = z.infer<typeof registerSchema>;
+export type LoginForm = z.infer<typeof loginSchema>;
