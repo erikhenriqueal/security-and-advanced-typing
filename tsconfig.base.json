@@ -9,6 +9,8 @@
       "@shared/*": ["./packages/shared/src/*"]
     },
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true
   }
 }
