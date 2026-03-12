@@ -9,6 +9,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@/shadcn": resolve(__dirname, "./packages/shared/src"),
+      "@shared": resolve(__dirname, "../shared/src"),
     },
   },
 });

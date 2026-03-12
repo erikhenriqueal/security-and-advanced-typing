@@ -26,8 +26,9 @@
     "noUncheckedSideEffectImports": true,
 
     "paths": {
-      "@/shadcn/*": ["./packages/shared/src/*"]
+      "@/shadcn/*": ["./packages/shared/src/*"],
+      "@shared/*": ["../shared/src/*"]
     }
   },
-  "include": ["src", "packages"]
+  "include": ["src", "packages", "../shared"]
 }
