@@ -50,6 +50,7 @@ model Document {
   title       String
   content     String
   authorId    String
+  authorName  String
   author      User     @relation(fields: [authorId], references: [id])
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
