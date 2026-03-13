@@ -1,6 +1,9 @@
 import { z } from "zod";
 
-export const roleSchema = z.string().min(1, "Role is required");
+export const roleSchema = z.enum(
+  ["viewer", "contributor", "manager", "admin"],
+  "Invalid role",
+);
 export const nameSchema = z
   .string()
   .min(2, "Username must be at least 2 characters long")
