@@ -17,7 +17,7 @@ export default function AuthSelector() {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <Card className="w-sm gap-4">
+    <Card className="w-full max-w-96 gap-4">
       <CardHeader>
         <CardTitle>{isLogin ? "Login" : "Register"}</CardTitle>
         <CardDescription>
