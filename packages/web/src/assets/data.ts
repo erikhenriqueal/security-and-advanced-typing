@@ -1,4 +1,4 @@
-import { type DocumentCardProps } from "../components/DocumentCard";
+import { type DocumentPreview } from "../components/DocumentCard";
 
 export const user: {
   id: string;
@@ -9,6 +9,10 @@ export const user: {
   username: "Ana Silva",
   role: "admin",
 };
+
+export function generateRandomId() {
+  return crypto.randomUUID();
+}
 
 export function getUserActions(
   authorId: string,
@@ -29,7 +33,7 @@ export function getUserActions(
   return userActions;
 }
 
-export const cadsPreview: DocumentCardProps[] = [
+export const cardsPreview: DocumentPreview[] = [
   {
     ...getUserActions("user_01", user),
     docid: "clj1h2k340000u7x8g9h0j1k2",

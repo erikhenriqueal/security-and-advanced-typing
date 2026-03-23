@@ -16,10 +16,12 @@ export interface BaseDocument {
   content: string;
 }
 
-export interface DocumentCardProps extends Omit<BaseDocument, "content"> {
-  docid: string;
+export interface DocumentPreview extends Omit<BaseDocument, "content"> {
   authorName: string;
   previewContent: string;
+}
+
+export interface DocumentCardProps extends DocumentPreview {
   authorUser?: boolean;
   onAction?: (event: React.MouseEvent) => void;
 }
@@ -40,7 +42,7 @@ export default function DocumentCard({ authorUser, title, authorName, previewCon
         </CardDescription>
       </CardHeader>
       <CardContent className="relative h-32 overflow-clip">
-        <p className="leading-tight line-clamp-6">
+        <p className="leading-tight line-clamp-6 whitespace-pre-line">
           {previewContent}
         </p>
       </CardContent>

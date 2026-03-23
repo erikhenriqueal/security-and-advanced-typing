@@ -1,13 +1,7 @@
 import { buttonVariants } from "@/shadcn/components/ui/button";
-
-import {
-  TooltipProvider,
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent
-} from "@/shadcn/components/ui/tooltip";
-
 import { FilePen, Users } from "lucide-react";
+
+import { TooltipButton } from "./lib/TooltipButton";
 
 export default function DashboardActions({
   userRole,
@@ -18,11 +12,26 @@ export default function DashboardActions({
   className?: string;
   onAction?: (action: string) => void;
 }) {
+  if (userRole === "viewer") return;
   return (
     <div className={`inline-flex space-x-2 w-max h-min p-2 bg-primary rounded-full ring-2 ring-primary/50 ${className}`}>
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger
+      <TooltipButton
+        title="New Document"
+        className={
+          buttonVariants({
+            variant: "outline",
+            size: "icon-lg",
+            className: "cursor-pointer"
+          })
+        }
+        onClick={() => onAction && onAction("new_doc")}
+      >
+        <FilePen />
+      </TooltipButton>
+      {
+        userRole === "admin" ?
+          <TooltipButton
+            title="Manage Users"
             className={
               buttonVariants({
                 variant: "outline",
@@ -30,32 +39,10 @@ export default function DashboardActions({
                 className: "cursor-pointer"
               })
             }
-            onClick={() => onAction && onAction("new_doc")}
+            onClick={() => onAction && onAction("see_users")}
           >
-            <FilePen />
-          </TooltipTrigger>
-          <TooltipContent>New Document</TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      {
-        userRole === "admin" ?
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger
-                className={
-                  buttonVariants({
-                    variant: "outline",
-                    size: "icon-lg",
-                    className: "cursor-pointer"
-                  })
-                }
-                onClick={() => onAction && onAction("see_users")}
-              >
-                <Users />
-              </TooltipTrigger>
-              <TooltipContent>Manage Users</TooltipContent>
-            </Tooltip>
-          </TooltipProvider> : null
+            <Users />
+          </TooltipButton> : null
       }
     </div>
   );
